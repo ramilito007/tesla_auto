@@ -26,6 +26,12 @@ def main():
     print(f"The returned token is: {ret}")
     vehicles = tesla.vehicle_list()
     print(vehicles[0])
+    try:
+        if(vehicles[0]['state'] == 'asleep'):
+            vehicles[0].sync_wake_up()
+        vehicles[0].command('LOCK')
+    except teslapy.HTTPError as e:
+        print(e)
     tesla.close()
 
 
