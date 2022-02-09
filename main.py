@@ -25,7 +25,7 @@ def main():
     # tesla = teslapy.Tesla(args.email)
     with teslapy.Tesla(args.email, authenticator=custom_auth) as tesla:
         ret = tesla.fetch_token()
-    print(f"The returned token is: {ret}")
+    print(f"The returned token is:{ret}")
 
 
 if __name__ == "__main__":
